@@ -1,0 +1,8 @@
+# packages
+
+fire
+pathlib
+sentencepiece
+tqdm
+typeguard
+wandb
