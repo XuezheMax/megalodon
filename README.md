@@ -28,7 +28,7 @@ Then, install the apex package.
 git clone https://github.com/NVIDIA/apex.git
 cd apex
 
-# checkout to the correct verison
+# checkout to the correct version
 git checkout 23.08
 
 # complie & install
