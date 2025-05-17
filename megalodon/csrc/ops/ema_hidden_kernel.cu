@@ -737,8 +737,9 @@ __global__ void EMAHiddenCUDABwdKernel(
       dp += complex_utils::RealOfProduct(dy, sum1[b]);
       dq += dy * p_v * sum2[b];
       if (h != nullptr) {
-        dq += dy * h[i * N + k] * qw1 * static_cast<T_ACC>(L);
-        h_grad[(b * D + i) * N + k] = std::conj(dy * qw2);
+        int64_t hidx = (b * D + i) * N + k;
+        dq += dy * h[hidx] * qw1 * static_cast<T_ACC>(L);
+        h_grad[hidx] = std::conj(dy * qw2);
       }
     }
     p_grad[i * N + k] = dp;
